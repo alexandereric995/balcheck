@@ -5,6 +5,21 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+</script>
 <style>
 body {
   margin: 0;
@@ -144,22 +159,7 @@ text-decoration: bold;
     width: 70%;
   }
 }
-</style>
-<script>
-var isNS = (navigator.appName == "Netscape") ? 1 : 0;
-if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
-function mischandler(){
-return false;
-}
-function mousehandler(e){
-var myevent = (isNS) ? e : event;
-var eventbutton = (isNS) ? myevent.which : myevent.button;
-if((eventbutton==2)||(eventbutton==3)) return false;
-}
-document.oncontextmenu = mischandler;
-document.onmousedown = mousehandler;
-document.onmouseup = mousehandler;
-</script> 
+</style> 
 </head>
 <body>
 
@@ -233,7 +233,7 @@ function test_input($data) {
 <center>
 <h2>PAYMENT FORM</h2>
 <p><span class="error">* required field</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> 
   Name: <input type="text" name="name">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
@@ -253,19 +253,6 @@ function test_input($data) {
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
-
-<?php
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $website;
-echo "<br>";
-echo $comment;
-echo "<br>";
-echo $gender;
-?>
 </center>
 </body>
 </html>

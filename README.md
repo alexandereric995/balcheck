@@ -1,2 +1,3 @@
 # balcheck
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ca160b23d9f44825a0f89761d0441861)](https://app.codacy.com/gh/alexandereric995/balcheck?utm_source=github.com&utm_medium=referral&utm_content=alexandereric995/balcheck&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ca160b23d9f44825a0f89761d0441861)](https://app.codacy.com/gh/alexandereric995/balcheck?utm_source=github.com&utm_medium=referral&utm_content=alexandereric995/balcheck&utm_campaign=Badge_Grade)
